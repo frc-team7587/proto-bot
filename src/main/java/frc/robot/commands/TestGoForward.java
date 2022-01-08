@@ -11,6 +11,7 @@ public class TestGoForward extends WaitUntilCommand {
      */
   
     private TestMotor testMotor;
+    private int logCount;
   
     public TestGoForward(TestMotor subsystem, BooleanSupplier btnState) {
       super(btnState);
@@ -22,11 +23,15 @@ public class TestGoForward extends WaitUntilCommand {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
+      System.out.println("...initialized");
     }
   
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
+        if(logCount<10){
+          System.out.println("....GoFwd executing " + ++logCount);
+        }
         testMotor.forward();
     }
   
@@ -35,5 +40,6 @@ public class TestGoForward extends WaitUntilCommand {
     public void end(boolean interrupted) {
         System.out.println(" end, interrupted=" + interrupted);
       testMotor.stop();
+      logCount=0;
     }
   }

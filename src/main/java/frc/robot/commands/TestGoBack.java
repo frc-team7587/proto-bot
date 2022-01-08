@@ -33,7 +33,6 @@ public class TestGoBack extends WaitUntilCommand {
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-      System.out.println(" end, interrupted=" + interrupted);
       testMotor.stop();
     }
   }
