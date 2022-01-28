@@ -6,12 +6,12 @@ import static frc.robot.Constants.*;
 // import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 // import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
-import edu.wpi.first.wpilibj.PWMVictorSPX;
+import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class TestMotor extends SubsystemBase {
 
-  private final PWMVictorSPX victorPwmOne = new PWMVictorSPX(PWM_ZERO);
+  private final PWMVictorSPX victorPwmOne = new PWMVictorSPX(-1);
   
   // private final TalonSRX talon = new TalonSRX(HANGER_TALON_ID);
 

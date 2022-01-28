@@ -35,7 +35,7 @@ public class Robot extends TimedRobot {
     // m_chooser.addOption("My Auto", kCustomAuto);
     // SmartDashboard.putData("Auto choices", m_chooser);
     
-    /* // CameraServer.getInstance().startAutomaticCapture();
+    /* // CameraServer.startAutomaticCapture();
     m_chooser.addOption("Spin 1 sec 25%", "AutoSpin()");
     m_chooser.addOption("Forward 1 sec 25%", "AutoForward()");
     m_chooser.addOption("Release balls", "ReleaseBalls()");

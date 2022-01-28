@@ -10,14 +10,16 @@ import static frc.robot.Constants.*;
 public class RobotContainer {
 
     // Subsystems (driver train, and other manipulators)
-/*     private final DriveTrain m_drive = new DriveTrain();
-    private final Hanger m_hanger = new Hanger();
+    private final DriveTrain m_drive = new DriveTrain();
+/*    private final Hanger m_hanger = new Hanger();
  */
-    private final TestMotor testMotor = new TestMotor();
+    //private final TestMotor testMotor = new TestMotor();
 
     // Controllers (input devices)
     // Set the port accordingly if you have multiple USB input devices
-    final Joystick gamePad = new Joystick(0);
+    final Joystick gamePad = new Joystick(1);
+    final Joystick logi = new Joystick(0);
+
 
     // command for autonomous mode
     // private final Command m_autoCommand = new AutoPortDeploy(m_drive, m_intake, AUTO_PORT_DEPLOY_TIME, AUTO_PORT_DEPLOY_SPEED);
@@ -25,11 +27,11 @@ public class RobotContainer {
     public RobotContainer() {
         
         // set the default command for the drive train
-        /* m_drive.setDefaultCommand(
+         m_drive.setDefaultCommand(
                 new RunCommand(
                         () -> m_drive.drive(DRIVE_SPEED_MULTIPLIER * -logi.getY() * logi.getThrottle(),
                                 DRIVE_SPEED_MULTIPLIER * 0.75 * logi.getTwist() * Math.abs(logi.getThrottle())),
-                        m_drive));  */
+                        m_drive));  
        
 
         configureButtonBindings();
@@ -44,11 +46,11 @@ public class RobotContainer {
     private void configureButtonBindings() {
 
         // Gamepad Buttons to ID
-        final Button btnForward = new JoystickButton(gamePad, BTN_Y); // Y
+       /* final Button btnForward = new JoystickButton(gamePad, BTN_Y); // Y
         btnForward.whenHeld(new TestGoForward(testMotor, () -> (!btnForward.get())));
         
         final Button btnBackward = new JoystickButton(gamePad, BTN_A); // A
-        btnBackward.whenHeld(new TestGoBack(testMotor, () -> (!btnBackward.get())));
+        btnBackward.whenHeld(new TestGoBack(testMotor, () -> (!btnBackward.get()))); */
     }
 
     /**

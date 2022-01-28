@@ -25,7 +25,7 @@ public class Constants {
     public static final int BUMP_LEFT = 5;
     public static final int BUMP_RIGHT = 6;
 
-/*     // Drivetrain constants
+     // Drivetrain constants
     public static final int DRIVE_LEFT1 = 0;
     public static final int DRIVE_LEFT2 = 1;
     public static final int DRIVE_RIGHT1 = 2;
@@ -47,6 +47,6 @@ public class Constants {
     // Auto constants
     public static final double AUTO_PORT_DEPLOY_TIME = 2;
     public static final double AUTO_PORT_DEPLOY_SPEED = 0.25; 
-*/
+
 
 }
