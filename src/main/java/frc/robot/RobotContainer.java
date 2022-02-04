@@ -11,6 +11,7 @@ public class RobotContainer {
 
     // Subsystems (driver train, and other manipulators)
     private final DriveTrain m_drive = new DriveTrain();
+    private final Arm m_arm = new Arm();
 /*    private final Hanger m_hanger = new Hanger();
  */
     //private final TestMotor testMotor = new TestMotor();
@@ -44,6 +45,17 @@ public class RobotContainer {
      * passing it to a {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
      */
     private void configureButtonBindings() {
+
+        // bind arm controls
+        final Button btnOut = new JoystickButton(gamePad, BUMP_RIGHT); // Right bumper
+        final Button btnIn = new JoystickButton(gamePad, BUMP_LEFT); // Left bumper
+        // final Button btnHangEx = new JoystickButton(gamePad, BTN_Y); // Y
+        // final Button btnHangRet = new JoystickButton(gamePad, BTN_B); // B
+        final Button btnArmDown = new JoystickButton(gamePad, BTN_A); // A
+        final Button btnArmUp = new JoystickButton(gamePad, BTN_X); // X
+
+        btnArmDown.whenPressed(new ArmDown(m_arm, () -> (!btnArmDown.get())));
+        btnArmUp.whenPressed(new ArmUp(m_arm, () -> (!btnArmUp.get())));
 
         // Gamepad Buttons to ID
        /* final Button btnForward = new JoystickButton(gamePad, BTN_Y); // Y
